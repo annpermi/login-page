@@ -1,47 +1,54 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MailIcon from "@material-ui/icons/Mail";
+import PhoneIcon from "@material-ui/icons/Phone";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import ImageIcon from "@material-ui/icons/Image";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
-    height: '120vh',
+    minHeight: "900px",
+    maxHeight: "1500px"
   },
   header: {
     color: "white",
     paddingTop: theme.spacing(3)
   },
   seytech: {
-    fontSize:'40px'
+    fontSize: "40px"
   },
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "white",
     padding: theme.spacing(3),
     // marginBottom: theme.spacing(5),
-    borderRadius: '10px'
+    borderRadius: "10px"
   },
   form: {
-    width: '100%',
-    marginTop: theme.spacing(3),
+    width: "100%",
+    marginTop: theme.spacing(3)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 2)
   },
   link: {
-    color: '#0291f6',
-    textDecoration: 'none'
-  },
+    color: "#0291f6",
+    textDecoration: "none"
+  }
 }));
 
 export default function SignUp() {
@@ -51,7 +58,10 @@ export default function SignUp() {
     <div className={classes.root}>
       <div className={classes.header}>
         <h1 className={classes.seytech}>Welcome to SEYTECH!</h1>
-        <h2>In order to register you need a code. Please ask to your admin if you don't have it.</h2>
+        <h2>
+          In order to register you need a code. Please ask to your admin if you
+          don't have it.
+        </h2>
       </div>
       <Container component="main" maxWidth="md">
         <CssBaseline />
@@ -71,6 +81,13 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <AccountCircle />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -82,6 +99,13 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="lname"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <AccountCircle />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -93,6 +117,13 @@ export default function SignUp() {
                   label="Email"
                   name="email"
                   autoComplete="email"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <MailIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -104,6 +135,13 @@ export default function SignUp() {
                   fullWidth
                   id="phone"
                   label="Phone"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <PhoneIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -116,6 +154,13 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <VpnKeyIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -128,6 +173,13 @@ export default function SignUp() {
                   type="password"
                   id="confPassword"
                   autoComplete="current-password"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <VpnKeyIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -139,6 +191,13 @@ export default function SignUp() {
                   label="Register Code"
                   name="regCode"
                   autoComplete="code"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <ContactSupportIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -150,6 +209,13 @@ export default function SignUp() {
                   label="State"
                   name="state"
                   autoComplete="code"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <LocationOnIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -160,6 +226,13 @@ export default function SignUp() {
                   label="Avatar"
                   name="avatar"
                   autoComplete="avatar"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <ImageIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
             </Grid>
@@ -172,12 +245,12 @@ export default function SignUp() {
             >
               Register
             </Button>
-              <div>
-                <div>Already have an account?</div>
-                <Link to='/signin' className={classes.link}>
-                    Login
-                </Link>
-              </div>
+            <div>
+              <div>Already have an account?</div>
+              <Link to="/signin" className={classes.link}>
+                Login
+              </Link>
+            </div>
           </form>
         </div>
       </Container>
