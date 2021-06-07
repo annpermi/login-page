@@ -8,30 +8,35 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({ 
+  root: {
+    padding: theme.spacing(15)
+  },
   paper: {
-    marginTop: theme.spacing(15),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    border: '1px solid black',
-    padding: theme.spacing(8)
+    padding: theme.spacing(8),
+    backgroundColor: 'white',
+    marginBottom: theme.spacing(3)
   },
   form: {
     width: '100%',
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-  h1: {
-    marginTop: theme.spacing(3)
-  }
+  link: {
+    color: '#0291f6',
+    textDecoration: 'none'
+  },
 }));
 
 export default function SignIn() {
   const classes = useStyles();
 
   return (
+    <div className={classes.root}>
     <Container component="main" maxWidth="sm">
       <CssBaseline />
       <div className={classes.paper}>
@@ -71,11 +76,12 @@ export default function SignIn() {
             Log In
           </Button>
             <p>Don't have an account?</p>
-            <Link to='/' variant="body2">
+            <Link to='/' className={classes.link}>
               Create an account
             </Link>
         </form>
       </div>
     </Container>
+    </div>
   );
 }

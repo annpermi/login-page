@@ -10,15 +10,26 @@ import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    height: '120vh',
+  },
+  header: {
+    color: "white",
+    paddingTop: theme.spacing(3)
+  },
+  seytech: {
+    fontSize:'40px'
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'white',
+    padding: theme.spacing(3),
+    // marginBottom: theme.spacing(5),
+    borderRadius: '10px'
   },
   form: {
     width: '100%',
@@ -27,15 +38,21 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  link: {
+    color: '#0291f6',
+    textDecoration: 'none'
+  },
 }));
 
 export default function SignUp() {
   const classes = useStyles();
 
   return (
-    <div>
-      <h1>Welcome to SEYTECH!</h1>
-      <p>In order to register you need a code. Please ask to your admin if you don't have it.</p>
+    <div className={classes.root}>
+      <div className={classes.header}>
+        <h1 className={classes.seytech}>Welcome to SEYTECH!</h1>
+        <h2>In order to register you need a code. Please ask to your admin if you don't have it.</h2>
+      </div>
       <Container component="main" maxWidth="md">
         <CssBaseline />
         <div className={classes.paper}>
@@ -156,8 +173,8 @@ export default function SignUp() {
               Register
             </Button>
               <div>
-                <p>Already have an account? </p>
-                <Link to='/signin' variant="body2">
+                <div>Already have an account?</div>
+                <Link to='/signin' className={classes.link}>
                     Login
                 </Link>
               </div>
